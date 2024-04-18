@@ -6,8 +6,8 @@ image:
   tag: "1.25.4"
 
 imagePullSecrets: []
-nameOverride: "Development"
-fullnameOverride: "Muddasar-hpa-nginx"
+nameOverride: "development"
+fullnameOverride: "muddasar-hpa-nginx"
 
 serviceAccount:
   create: true
@@ -56,5 +56,5 @@ affinity:
         - key: "app.kubernetes.io/name"
           operator: In
           values:
-          - "Muddasar"
+          - "muddasar"
       topologyKey: "kubernetes.io/hostname"
