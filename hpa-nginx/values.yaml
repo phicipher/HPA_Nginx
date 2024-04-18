@@ -6,8 +6,8 @@ image:
   tag: "1.25.4"
 
 imagePullSecrets: []
-nameOverride: "MuddasarTest"
-fullnameOverride: "second-stage-hpa-nginx"
+nameOverride: "Development"
+fullnameOverride: "Muddasar-hpa-nginx"
 
 serviceAccount:
   create: true
@@ -15,9 +15,6 @@ serviceAccount:
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
-
-podAnnotations: {}
-podLabels: {}
 
 podSecurityContext:
    fsGroup: 2000
@@ -50,7 +47,7 @@ autoscaling:
   minReplicas: 5
   maxReplicas: 20
   targetCPUUtilizationPercentage: 80
-  
+
 affinity:
   podAntiAffinity:
     requiredDuringSchedulingIgnoredDuringExecution:
@@ -59,5 +56,5 @@ affinity:
         - key: "app.kubernetes.io/name"
           operator: In
           values:
-          - "MuddasarTest"
+          - "Muddasar"
       topologyKey: "kubernetes.io/hostname"
